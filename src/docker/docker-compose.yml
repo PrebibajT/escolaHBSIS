@@ -1,0 +1,8 @@
+sqlserverThiago:
+  image: microsoft/mssql-server-linux
+  hostname: sqlserver
+  environment:
+    - ACCEPT_EULA=Y
+    - SA_PASSWORD=Thiago8403
+  ports:
+    - 1435:1433
