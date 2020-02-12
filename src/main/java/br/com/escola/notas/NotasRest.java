@@ -1,9 +1,12 @@
 package br.com.escola.notas;
 
+import net.sf.jasperreports.engine.JRException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.io.FileNotFoundException;
 
 @RestController
 @RequestMapping("/notas")
@@ -42,5 +45,12 @@ public class NotasRest {
         this.notaService.delete(id);
 
     }
+
+    @GetMapping("/report/{format}/{idAluno}")
+    public String generateReport(@PathVariable("format")String format, @PathVariable("idAluno")Long idAluno) throws FileNotFoundException, JRException {
+        return notaService.exportJasper(format, idAluno);
+    }
+
+
 
 }
