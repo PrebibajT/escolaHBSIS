@@ -15,15 +15,18 @@
     </style>
 
 
-    <field name="idMateria" class="java.lang.Long">
+    <field name="disciplina" class="java.lang.Object">
+        <property name="net.sf.jasperreports.javabean.field.property" value="materia.disciplina"/>
     </field>
-    <field name="idAluno" class="java.lang.Long">
+    <field name="nome" class="java.lang.Object">
+        <property name="net.sf.jasperreports.javabean.field.property" value="aluno.nome"/>
     </field>
     <field name="nota1" class="java.lang.Double">
     </field>
     <field name="nota2" class="java.lang.Double">
     </field>
     <field name="nota3" class="java.lang.Double">
+
     </field>
     <background>
         <band splitType="Stretch"/>
@@ -100,15 +103,15 @@
                 <reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="fa7cec56-4ec1-48e6-a26e-7266a995d174"/>
                 <textField isStretchWithOverflow="true">
                     <reportElement style="Detail" x="133" y="0" width="133" height="15" uuid="91b75d71-ac6d-4383-9f85-b171e781608e">
-                        <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="82497e33-57b9-49a3-b3c1-96211e45454d"/>
+                        <property name="net.sf.jasperreports.javabean.field.property" value="idMateria.disciplina"/>
                     </reportElement>
-                    <textFieldExpression><![CDATA[$F{idMateria}]]></textFieldExpression>
+                    <textFieldExpression><![CDATA[$F{disciplina}]]></textFieldExpression>
                 </textField>
                 <textField isStretchWithOverflow="true">
                     <reportElement style="Detail" x="266" y="0" width="133" height="15" uuid="9230478c-93a7-4eae-9f4e-cbbea23e4b25">
-                        <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e6545f21-ebb2-4918-a915-50c9fdef6626"/>
+                        <property name="net.sf.jasperreports.javabean.field.property" value="idAluno.nome"/>
                     </reportElement>
-                    <textFieldExpression><![CDATA[$F{idAluno}]]></textFieldExpression>
+                    <textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
                 </textField>
                 <textField isStretchWithOverflow="true">
                     <reportElement style="Detail" x="399" y="0" width="133" height="15" uuid="1e58c4ce-344e-4940-bc74-effba5917202">
