@@ -21,15 +21,17 @@ public class Notas {
     @JoinColumn (name = "id_aluno", referencedColumnName="id")
     private Alunos aluno;
 
-    @Column(name = "nota_1")
+    @Column(name = "nota_1", nullable = false)
     private Double nota1;
 
-    @Column(name = "nota_2")
+    @Column(name = "nota_2", nullable = false )
     private Double nota2;
 
-    @Column(name = "nota_3")
+    @Column(name = "nota_3", nullable = false)
     private Double nota3;
 
+    @Column(name = "media" , nullable = false)
+    private Double media;
 
     public Long getId() {
         return id;
@@ -37,6 +39,14 @@ public class Notas {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Double getMedia() {
+        return media;
+    }
+
+    public void setMedia(Double media) {
+        this.media = media;
     }
 
     public Materia getMateria() {
@@ -89,6 +99,7 @@ public class Notas {
                 ", nota_1=" + nota1 +
                 ", nota_2=" + nota2 +
                 ", nota_3=" + nota3 +
+                ", media="  + media +
                 '}';
     }
 }

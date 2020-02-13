@@ -45,6 +45,7 @@ public class NotaService {
         notas.setNota1(notasDTO.getNota1());
         notas.setNota2(notasDTO.getNota2());
         notas.setNota3(notasDTO.getNota3());
+        notas.setMedia(calculadorMedia(notasDTO.getNota1(),notasDTO.getNota2(),notasDTO.getNota3()));
 
         notas = this.iNotasRepository.save(notas);
 
@@ -97,6 +98,10 @@ public class NotaService {
 
     }
 
+    public Double calculadorMedia(Double n1, Double n2,Double n3){
+
+        return  (n1 + n2 + n3)/3;
+    }
 
     public String exportJasper(String reportFormat, Long idAluno) throws FileNotFoundException, JRException {
         String path = "C:\\Users\\thiago.prebibaj\\Downloads";
@@ -115,7 +120,6 @@ public class NotaService {
         if (reportFormat.equalsIgnoreCase("pdf")) {
             JasperExportManager.exportReportToPdfFile(jasperPrint, path + "\\boletim.pdf");
         }
-
 
         return "Boletim gerado no local: " + path;
     }

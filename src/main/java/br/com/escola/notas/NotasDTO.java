@@ -14,12 +14,14 @@ public class NotasDTO {
     private Double nota2;
     @NotNull(message = "A terceira nota não deve ser nula")
     private Double nota3;
+    @NotNull(message = "A media nota não deve ser nula")
+    private Double media;
 
     public NotasDTO() {
 
     }
 
-    public NotasDTO(Long id, Long idMateria, Long idAluno, Double nota1, Double nota2, Double nota3) {
+    public NotasDTO(Long id, Long idMateria, Long idAluno, Double nota1, Double nota2, Double nota3, Double media) {
         this.id = id;
         this.idMateria = idMateria;
         this.idAluno = idAluno;
@@ -35,9 +37,18 @@ public class NotasDTO {
                 notas.getAluno().getId(),
                 notas.getNota1(),
                 notas.getNota2(),
-                notas.getNota3()
+                notas.getNota3(),
+                notas.getMedia()
         );
 
+    }
+
+    public Double getMedia() {
+        return media;
+    }
+
+    public void setMedia(Double media) {
+        this.media = media;
     }
 
     public Long getId() {
@@ -97,6 +108,7 @@ public class NotasDTO {
                 ", nota1=" + nota1 +
                 ", nota2=" + nota2 +
                 ", nota3=" + nota3 +
+                ", media=" + media +
                 '}';
     }
 
