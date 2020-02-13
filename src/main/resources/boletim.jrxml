@@ -13,6 +13,9 @@
             <style backcolor="#D6D2D2"/>
         </conditionalStyle>
     </style>
+    <queryString language="SQL">
+        <![CDATA[select * from seg_notas]]>
+    </queryString>
     <field name="nome" class="java.lang.Object">
         <property name="net.sf.jasperreports.javabean.field.property" value="aluno.nome"/>
     </field>
@@ -27,6 +30,9 @@
     </field>
     <field name="nota3" class="java.lang.Double">
         <property name="com.jaspersoft.studio.field.label" value="nota_3"/>
+    </field>
+    <field name="media" class="java.lang.Double">
+        <property name="com.jaspersoft.studio.field.label" value="media"/>
     </field>
     <background>
         <band height="61" splitType="Stretch"/>
@@ -85,7 +91,7 @@
                 </graphicElement>
             </line>
             <staticText>
-                <reportElement style="Column header" x="200" y="-24" width="225" height="34" forecolor="#3D3736" uuid="a1bf5a84-1e16-49fa-befa-b52540ac6d3f">
+                <reportElement style="Column header" x="237" y="-24" width="110" height="34" forecolor="#3D3736" uuid="a1bf5a84-1e16-49fa-befa-b52540ac6d3f">
                     <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a7651897-d864-4d38-91ce-179f95765b5e"/>
                     <property name="com.jaspersoft.studio.unit.y" value="px"/>
                 </reportElement>
@@ -98,43 +104,10 @@
                 <textElement textAlignment="Center">
                     <font fontName="MS Reference Sans Serif" size="22"/>
                 </textElement>
-                <text><![CDATA[Nota 1]]></text>
+                <text><![CDATA[1ª Nota]]></text>
             </staticText>
             <staticText>
-                <reportElement style="Column header" x="426" y="-24" width="190" height="34" forecolor="#3D3736" uuid="d0cc2850-d899-4e04-92ef-9fe8ac349704">
-                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a7651897-d864-4d38-91ce-179f95765b5e"/>
-                    <property name="com.jaspersoft.studio.unit.y" value="px"/>
-                </reportElement>
-                <box padding="0">
-                    <topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-                    <leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-                    <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-                    <rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-                </box>
-                <textElement textAlignment="Center">
-                    <font fontName="MS Reference Sans Serif" size="22"/>
-                </textElement>
-                <text><![CDATA[Nota 2
-]]></text>
-            </staticText>
-            <staticText>
-                <reportElement style="Column header" x="631" y="-24" width="166" height="34" forecolor="#3D3736" uuid="2d56e60d-07fa-4b43-bfbf-3b7c2f949aea">
-                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a7651897-d864-4d38-91ce-179f95765b5e"/>
-                    <property name="com.jaspersoft.studio.unit.y" value="px"/>
-                </reportElement>
-                <box padding="0">
-                    <topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-                    <leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-                    <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-                    <rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-                </box>
-                <textElement textAlignment="Center">
-                    <font fontName="MS Reference Sans Serif" size="22"/>
-                </textElement>
-                <text><![CDATA[Nota 3]]></text>
-            </staticText>
-            <staticText>
-                <reportElement style="Column header" x="-2" y="-24" width="201" height="34" forecolor="#3D3736" uuid="ba709a28-70a7-45a3-a77f-f43539d00aad">
+                <reportElement style="Column header" x="-2" y="-24" width="198" height="34" forecolor="#3D3736" uuid="ba709a28-70a7-45a3-a77f-f43539d00aad">
                     <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a7651897-d864-4d38-91ce-179f95765b5e"/>
                     <property name="com.jaspersoft.studio.unit.y" value="pixel"/>
                 </reportElement>
@@ -149,12 +122,60 @@
                 </textElement>
                 <text><![CDATA[Matéria]]></text>
             </staticText>
+            <staticText>
+                <reportElement style="Column header" x="377" y="-24" width="110" height="34" forecolor="#3D3736" uuid="e5c0fe3d-9db3-4b14-96d9-7c9770c5d127">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a7651897-d864-4d38-91ce-179f95765b5e"/>
+                    <property name="com.jaspersoft.studio.unit.y" value="px"/>
+                </reportElement>
+                <box padding="0">
+                    <topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    <leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    <rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                </box>
+                <textElement textAlignment="Center">
+                    <font fontName="MS Reference Sans Serif" size="22"/>
+                </textElement>
+                <text><![CDATA[2ª Nota]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Column header" x="517" y="-24" width="110" height="34" forecolor="#3D3736" uuid="f756f53c-9ad9-49d8-8af3-33ff184ebbb0">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a7651897-d864-4d38-91ce-179f95765b5e"/>
+                    <property name="com.jaspersoft.studio.unit.y" value="px"/>
+                </reportElement>
+                <box padding="0">
+                    <topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    <leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    <rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                </box>
+                <textElement textAlignment="Center">
+                    <font fontName="MS Reference Sans Serif" size="22"/>
+                </textElement>
+                <text><![CDATA[3ª Nota]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Column header" x="667" y="-24" width="111" height="34" forecolor="#3D3736" uuid="57c577fe-8399-48fa-918a-a1230dc7d003">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a7651897-d864-4d38-91ce-179f95765b5e"/>
+                    <property name="com.jaspersoft.studio.unit.y" value="px"/>
+                </reportElement>
+                <box padding="0">
+                    <topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    <leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    <rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                </box>
+                <textElement textAlignment="Center">
+                    <font fontName="MS Reference Sans Serif" size="22"/>
+                </textElement>
+                <text><![CDATA[Média]]></text>
+            </staticText>
         </band>
     </columnHeader>
     <detail>
         <band height="15" splitType="Stretch">
             <frame borderSplitType="DrawBorders">
-                <reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="fa7cec56-4ec1-48e6-a26e-7266a995d174"/>
+                <reportElement style="Row" mode="Opaque" x="-1" y="0" width="802" height="15" uuid="fa7cec56-4ec1-48e6-a26e-7266a995d174"/>
                 <textField isStretchWithOverflow="true">
                     <reportElement style="Title" isPrintRepeatedValues="false" x="200" y="-112" width="180" height="36" uuid="a0b40466-2d6e-4a24-acbe-ec2b7268c341">
                         <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0525f9ec-a591-4785-af9e-11ce4922df5e"/>
@@ -165,7 +186,7 @@
                     <textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
                 </textField>
                 <textField isStretchWithOverflow="true">
-                    <reportElement style="Detail" x="11" y="0" width="178" height="23" forecolor="rgba(0, 0, 0, 0.9019608)" uuid="f905dab1-3da3-458d-8d4f-76a9e69f49ec">
+                    <reportElement style="Detail" x="3" y="0" width="194" height="23" forecolor="rgba(0, 0, 0, 0.9019608)" uuid="f905dab1-3da3-458d-8d4f-76a9e69f49ec">
                         <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a7651897-d864-4d38-91ce-179f95765b5e"/>
                     </reportElement>
                     <textElement textAlignment="Center">
@@ -174,8 +195,9 @@
                     <textFieldExpression><![CDATA[$F{disciplina}]]></textFieldExpression>
                 </textField>
                 <textField isStretchWithOverflow="true">
-                    <reportElement style="Detail" x="230" y="0" width="160" height="23" forecolor="rgba(0, 0, 0, 0.9019608)" uuid="bc713439-63a2-458b-82eb-e02f40e9fd4b">
+                    <reportElement style="Detail" x="238" y="0" width="110" height="23" forecolor="rgba(0, 0, 0, 0.9019608)" uuid="bc713439-63a2-458b-82eb-e02f40e9fd4b">
                         <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="eb8f1bbf-817e-406f-8136-a74f0db85bd8"/>
+                        <property name="com.jaspersoft.studio.unit.width" value="px"/>
                     </reportElement>
                     <textElement textAlignment="Center">
                         <font fontName="MS Reference Sans Serif" size="16"/>
@@ -183,8 +205,9 @@
                     <textFieldExpression><![CDATA[$F{nota1}]]></textFieldExpression>
                 </textField>
                 <textField isStretchWithOverflow="true">
-                    <reportElement style="Detail" x="440" y="0" width="160" height="23" forecolor="rgba(0, 0, 0, 0.9019608)" uuid="d92e0742-9642-4b1f-b074-bc905b209670">
+                    <reportElement style="Detail" x="378" y="0" width="110" height="23" forecolor="rgba(0, 0, 0, 0.9019608)" uuid="d92e0742-9642-4b1f-b074-bc905b209670">
                         <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fed91a8f-33a1-47b2-b239-b0ba9b22f867"/>
+                        <property name="com.jaspersoft.studio.unit.width" value="px"/>
                     </reportElement>
                     <textElement textAlignment="Center">
                         <font fontName="MS Reference Sans Serif" size="16"/>
@@ -192,13 +215,25 @@
                     <textFieldExpression><![CDATA[$F{nota2}]]></textFieldExpression>
                 </textField>
                 <textField isStretchWithOverflow="true">
-                    <reportElement style="Detail" x="631" y="0" width="160" height="23" forecolor="rgba(0, 0, 0, 0.9019608)" uuid="9da4e191-e657-4d6c-a51c-65ef437f40c7">
+                    <reportElement style="Detail" x="518" y="0" width="110" height="23" forecolor="rgba(0, 0, 0, 0.9019608)" uuid="9da4e191-e657-4d6c-a51c-65ef437f40c7">
                         <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7654d291-3a02-4632-b0de-9aaa8017f59f"/>
+                        <property name="com.jaspersoft.studio.unit.width" value="px"/>
                     </reportElement>
                     <textElement textAlignment="Center">
                         <font fontName="MS Reference Sans Serif" size="16"/>
                     </textElement>
                     <textFieldExpression><![CDATA[$F{nota3}]]></textFieldExpression>
+                </textField>
+                <textField isStretchWithOverflow="true">
+                    <reportElement style="Detail" x="668" y="0" width="110" height="23" uuid="8acc32e4-f7e6-4524-9893-e2f846b4cb26">
+                        <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="721ed3ba-c126-4aba-b8b4-5ed4f9962ce9"/>
+                        <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                        <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                    </reportElement>
+                    <textElement textAlignment="Center">
+                        <font fontName="MS Reference Sans Serif" size="16"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$F{media}]]></textFieldExpression>
                 </textField>
             </frame>
         </band>
@@ -218,7 +253,7 @@
             <frame>
                 <reportElement mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#26241D" backcolor="#F2F2F2" uuid="5d8169bd-4a75-48c8-8a68-6d3ad5ba9402"/>
                 <textField pattern="EEEEE dd MMMMM yyyy">
-                    <reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#000000" uuid="fbce24bb-3cb1-44a3-8eec-8c067ddbe5b5"/>
+                    <reportElement style="Column header" x="22" y="1" width="188" height="20" forecolor="#000000" uuid="fbce24bb-3cb1-44a3-8eec-8c067ddbe5b5"/>
                     <textElement verticalAlignment="Middle">
                         <font size="10" isBold="false"/>
                     </textElement>
