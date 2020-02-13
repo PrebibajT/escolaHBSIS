@@ -6,13 +6,11 @@ import br.com.escola.materia.Materia;
 import br.com.escola.materia.MateriaService;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
-import org.aspectj.weaver.ast.Not;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
 
-import javax.jnlp.ClipboardService;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
@@ -99,20 +97,11 @@ public class NotaService {
 
     }
 
-    private List<NotasDTO> findDTO(Long idAluno){
-     List<NotasDTO> lista = new ArrayList<>();
-
-     for(Notas notas:  iNotasRepository.findByIdAluno(idAluno)){
-         lista.add(NotasDTO.of(notas));
-
-     }
-        return lista;
-    }
 
     public String exportJasper(String reportFormat, Long idAluno) throws FileNotFoundException, JRException {
         String path = "C:\\Users\\thiago.prebibaj\\Downloads";
 
-        List<NotasDTO> boletim = findDTO(idAluno);
+        List<Notas> boletim = iNotasRepository.findByAluno(alunoService.findById(idAluno));
 
         File file = ResourceUtils.getFile("classpath:boletim.jrxml");
         JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
