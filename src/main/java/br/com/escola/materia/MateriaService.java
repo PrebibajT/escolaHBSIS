@@ -1,10 +1,10 @@
 package br.com.escola.materia;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -41,6 +41,16 @@ public class MateriaService {
         throw new IllegalArgumentException(String.format("ID %s não existe", id));
     }
 
+    public MateriaDTO findByIdMateria(Long id) {
+        Optional<Materia> materiaOptional = this.iMateriaRepository.findById(id);
+
+        if (materiaOptional.isPresent()) {
+            return MateriaDTO.of(materiaOptional.get());
+        }
+
+        throw new IllegalArgumentException(String.format("ID %s não existe", id));
+    }
+
     public MateriaDTO update(MateriaDTO materiaDTO, Long id) {
         Optional<Materia> materiaOptional = this.iMateriaRepository.findById(id);
 
@@ -67,5 +77,10 @@ public class MateriaService {
         LOGGER.info("Executando delete para matéria de ID: [{}]", id);
 
         this.iMateriaRepository.deleteById(id);
+    }
+
+    public List<Materia> findAll() {
+        return this.iMateriaRepository.findAll();
+
     }
 }

@@ -7,10 +7,10 @@ public class MateriaDTO {
     @NotNull(message = "A diciplina não deve ser nula")
     private String disciplina;
 
-    public MateriaDTO(){
+    public MateriaDTO() {
     }
 
-    public MateriaDTO(Long id, String diciplina){
+    public MateriaDTO(Long id, String diciplina) {
         this.id = id;
         this.disciplina = diciplina;
 

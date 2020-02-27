@@ -5,7 +5,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/alunos")
 public class AlunosRest {
     private static final Logger LOGGER = LoggerFactory.getLogger(AlunosRest.class);
@@ -40,6 +43,21 @@ public class AlunosRest {
 
         this.alunoService.delete(id);
     }
+    @GetMapping("/{id}")
+    public AlunosDTO find(@PathVariable("id") Long id) {
+        LOGGER.info("Recebendo find para aluno de ID: {}", id);
+
+      return this.alunoService.findByIdAluno(id);
+    }
+
+    @GetMapping
+    public List<Alunos> findAll(){
+        LOGGER.info("Recebendo findAll para aluno");
+
+        return this.alunoService.findAll();
+    }
+
+
 
 
 }

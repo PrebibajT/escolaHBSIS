@@ -8,7 +8,6 @@ public class AlunosDTO {
     private String nome;
 
     public AlunosDTO() {
-
     }
 
     public AlunosDTO(Long id, String nome) {
