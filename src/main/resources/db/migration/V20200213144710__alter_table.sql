@@ -1,1 +1,0 @@
-alter table seg_notas add media DECIMAL(8,2)
